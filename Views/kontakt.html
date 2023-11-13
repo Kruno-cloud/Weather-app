@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Kontakt</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}" type="text/css">
+
+</head>
+
+
+<body id = kontatkBody>
+    <a href="/" style="position: absolute; top: 10px; left: 10px;text-decoration: none;color: white;font-size: 20px;">Povratak na početnu stranicu</a>
+
+<div id = kontakt
+    <h1 style="font-size: 46px; font-weight: bold;background-color: aliceblue;">Kontakti</h1>
+    <table id="tablicaPrognoze" style="background-color: aliceblue;">
+        <tr style="background-color: aliceblue;">
+            <th>Adresa</th>
+            <th>Telefon</th>
+            <th>Email</th>
+        </tr>
+        {% for kontakt in data %}
+            <tr style="background-color: aliceblue;">
+                <td>{{kontakt.Adresa}}</td>
+                <td>{{kontakt.Telefon}}</td>
+                <td>{{kontakt.Email}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+
+</body>
+
+</html>
+

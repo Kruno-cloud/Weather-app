@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Prognoza vremena za više dana</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}" type="text/css">
+
+    </head>
+
+    <body id="pocetnabody">
+        <div>
+            <h1 style="text-align: center; color:black">Prognoza vremena za više dana</h1>
+            <form style="text-align: center;" method="post" action="http://localhost:5000/visednevna">
+                <label for="lokacija" style="font-size: 24px; display: block;color: black;">Unesite željenu lokaciju:</label>
+                <input type="text" name="lokacija">
+                <input type="submit" value="Prikaži vrijeme" />
+
+            </form>
+            <p id="porukaTekst">{{porukaTekst}}</p>
+
+            <p style="font-size: 20px;">
+                <a href="/pocetnaStranica"
+                    style="text-decoration: none; font-family: 'Arial', sans-serif; position: absolute; top: 10px;left: 10px;font-size: 30x; color: white;">Početna Stranica</a>
+            </p>
+            <p style="font-size: 20px;color: black;"><a href="/kontakt"
+                        style="text-decoration: none; font-family: 'Arial', sans-serif;position: absolute; top: 10px;right: 10px; font-size: 30x; color: white;">Kontakt</a>.</p>  
+        
+            <!-- <p style="font-size: 20px;">
+                <a href="/jednodnevna"
+                    style="text-decoration: none; text-align: center; font-family: 'Arial', sans-serif; font-size: 20px; color: black;">Temperatura za samo za današnji dan</a>
+            </p> --> 
+        </div>
+
+    </body>
+</html>

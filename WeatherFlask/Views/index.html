@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Prognoza vremena</title>
+<link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}" type="text/css">
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    h1,
+    form {
+        text-align: center;
+    }
+
+    label[for="grad"] {
+        font-size: 24px;
+        display: block;
+    }
+</style>
+</head>
+
+<body>
+    <div id = "index"> 
+    <h1 style="text-align: center; color:white">Prognoza vremena</h1>
+
+    <form style="text-align: center;"method=
+    "get" action="{{ url_for('api_vrijeme')}}">
+        <!-- kod action si zaboravio jos jednu viticastu zagradu i api_vrijeme treba biti u stringu -->
+        <!-- primjer za url_for funkciju: kada postoji ruta kao u tvom slucaju da ide api/vrijeme onda umjesto / se pise _  -->
+    
+        <label for="grad" style="font-size: 24px; display: block;color: white;">Unesite grad:</label>
+        <input type="text" id="grad" name="grad">
+        <button type="submit" id="dohvatiVrijeme">Prikaži vrijeme</button> <!--iz 'button type' = button u 'submit' -->
+        
+    </form>
+    <div>
+
+
+    <!-- primjer iteracije liste koristeci python u html-u -->
+    {% for prognozaData in data %}
+        <h1>{{prognozaData.temperatura}} <span>{{prognozaData.uvjeti}}</span> </h1>
+    {% endfor %}
+
+
+
+    </div>
+    <!-- Navigacijska traka -->
+<nav>
+    <ul>
+        <li><a href="/" style="text-align: center; color: white; font-family: Arial, Helvetica, sans-serif; font-size: 20px; text-decoration: none;">Početna</a></li>
+
+        <li><a href="/o-nama" style="text-align: center; color: white; font-family: Arial, Helvetica, sans-serif; font-size:20px; text-decoration: none;">O nama</a></li>
+        
+        <p style="font-size: 20px;color: white;">Za više informacija kliknite na: <a href="/kontakt"
+        style="text-decoration: none; font-family: 'Arial', sans-serif; font-size: 20px; color: white;">kontaktirajte nas</a>.</p>
+
+        </div>
+    </ul>
+</nav>
+
+
+</body>
+
+
+</html>

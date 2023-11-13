@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>One_day</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}" type="text/css">
+
+</head>
+
+<body id="oneday">
+    <div>
+        <h1>One_day</h1>
+        <form method="post">
+            <label for="location">Unesite željenu lokaciju:</label>
+            <input type="text" id="location" name="location"/>
+            <button type="submit">Dohvati vremenske podatke</button>
+        </form>
+
+        
+            {% if temp != "": %}
+            <h1>Temperatura iznosi: {{temp}} Celzijusa</h1>
+            {%endif%}
+
+
+        <!-- primjer iteracije liste koristeci python u html-u -->
+        <!-- {% for prognozaData in prognoza%}
+        <h1>{{prognozaData.temperatura}} <span>{{prognozaData.uvjeti}}</span> </h1>
+        {% endfor %} -->
+    </div>
+</body>
+
+</html>
+

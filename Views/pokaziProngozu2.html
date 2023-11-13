@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Prikaz prognoze vremena</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+    </head>
+
+    
+        <!--<style>
+            body {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+            }
+
+            h1,
+            form {
+                text-align: center;
+            }
+
+            label[for="lokacija"] {
+                font-size: 24px;
+                display: block;
+            }
+        </style>-->
+    
+    <body>
+        <div id = "naslovnaTraka">
+            <a class="LinkButton" href = "{{url_for('pocetnaStranica')}}">Povratak</a>
+        </div>
+        <p id="porukaTekst">{{porukaTekst}}</p>
+
+        <table id = "tablicaPrognoze">
+
+
+
+    <body>
+        <div>
+
+            <h1 style="text-align: center; color:black">Prikaz prognoze</h1>
+        </div>
+        <p id="porukaTekst">{{porukaTekst}}</p>
+
+            <!--{% if temperatura != "": %}
+            <h1>Temperatura iznosi: {{temperatura}} Celzijusa</h1>
+            {%endif%}
+            <h1>Trenutna temperatura: {{ temperatura }}°C</h1>-->
+            <!--<p style="font-size: 20px;color: white;"><a href="/pocetnaStranica"
+                    style="text-decoration: none; font-family: 'Arial', sans-serif;position: absolute; top: 10px;left: 10px; font-size: 20px; color: white;">Povratak</a>.</p>  
+                    <!--<table>
+                        <th>
+                            <th>Dan</th>
+                            <th>Temperatura</th>
+                            <th>Uvjeti</th>
+                        </th>
+            
+                    {% for prognoza in data %}
+                        <tr>
+                            <td>{{prognoza.redniBroj}}</td>
+                            <td>{{prognoza.temperatura}}</td>
+                            <td>{{prognoza.uvjeti}}</td>
+                        </tr>
+            
+                    {%endfor%}
+                    </table>-->
+        
+        <table id = "tablicaPrognoze">
+            <tr>
+                <th>Datum</th>
+                <th>Temperatura</th>
+                <th>Real feel</th>
+                <th>MaksimalnaDnevna</th>
+                <th>MinimalnaDnevna</th>
+                <th>BrzinaVjetra</th>
+                <th>Vlaznost</th>
+                <th>Tlak</th>
+            </tr>
+
+            <tr>
+                <td>{{data.Datum}}</td>
+                <td>{{data.Temperatura}}</td>
+                <td>{{data.OsjecajTemperatura}}</td>
+                <td>{{data.MaksimalnaDnevna}}</td>
+                <td>{{data.MinimalnaDnevna}}</td>
+                <td>{{data.BrzinaVjetra}}</td>
+                <td>{{data.Vlaznost}}</td>
+                <td>{{data.Tlak}}</td>
+
+            </tr>
+        
+
+
+        <table id = "tablicaPrognoze">
+            <tr>
+                <th>Datum</th>
+                <th>Dan u Tjednu</th>
+                <th>Temperatura</th>
+                <th>Real feel</th>
+                <th>MaksimalnaDnevna</th>
+                <th>MinimalnaDnevna</th>
+                <th>BrzinaVjetra</th>
+                <th>Vlaznost</th>
+                <th>Tlak</th>
+                <th>Prikaz</th>
+            </tr>
+
+            {% for prognoza in data2 %}
+            <tr>
+                <td>{{prognoza.Datum}}</td>
+                <td>{{prognoza.DanUTjednu}}</td>
+                <td>{{prognoza.Temperatura}}</td>
+                <td>{{prognoza.OsjecajTemperatura}}</td>
+                <td>{{prognoza.MaksimalnaDnevna}}</td>
+                <td>{{prognoza.MinimalnaDnevna}}</td>
+                <td>{{prognoza.BrzinaVjetra}}</td>
+                <td>{{prognoza.Vlaznost}}</td>
+                <td>{{prognoza.Tlak}}</td>
+                <td><img src="{{prognoza.Ikona}}" alt="nema ikone"></td>
+
+            </tr>
+        {%endfor%}
+        </table>    
+
+        <!--<table id = "tablicaPrognoze">
+            <th>
+                <th>Dan</th>
+                <th>Temperatura</th>
+                <th>Uvjeti</th>
+            </th>
+
+        {% for key, value in data3.items() %}
+            <tr>
+                <td>{{value.Datum}}</td>
+                <td>{{value.DanUTjednu}}</td>
+                <td>{{value.temperatura}}</td>
+                <td>{{value.osjecajTemperatura}}</td>
+                <td>{{value.brzinaVjetra}}</td>
+
+            </tr>
+
+        {%endfor%}
+
+        </table> -->
+        </div>
+
+    </body>
+
+
+
+</html>

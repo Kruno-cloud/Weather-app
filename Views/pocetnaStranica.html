@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Prognoza vremena</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}" type="text/css">
+</head>
+
+<body id="pocetnabody"></body>
+    <p id="porukaTekst">{{porukaTekst}}</p>
+    <h1>Menu</h1>
+    <ul>
+        <li><p style="font-size: 20px;"></p><a class="LinkButton" href="{{url_for('visednevna')}}"
+            style="text-decoration: none; font-family: 'Arial', sans-serif;right: 10px; font-size: 30px;">Višednevna</a></p>  </li>
+        <li><p style="font-size: 20px;"></p><a class="LinkButton" href="{{url_for('jednodnevna')}}"
+            style="text-decoration: none; font-family: 'Arial', sans-serif; font-size: 30px;">Jednodnevna</a></li>
+        <li><p style="font-size: 20px;"></p><a class="LinkButton" href="{{url_for('kontakt')}}"
+            style="text-decoration: none; font-family: 'Arial', sans-serif; font-size: 30px;">O nama</a></li>
+    </ul>
+</body>
+        
+</html>

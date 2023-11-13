@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Prikaz prognoze vremena</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+    </head>
+    <body>
+        <div id="naslovnaTraka">
+            <a class="LinkButton" href="{{url_for('pocetnaStranica')}}">Povratak</a>
+        </div>
+        <p id="porukaTekst">{{porukaTekst}}</p>
+        <h1 style="color:black">Prognoza vremena</h1>
+        
+        {% if data is iterable and data is not string and data|length > 1 %}
+            <table id="tablicaPrognoze">
+                <tr>
+                    <th>Datum</th>
+                    <th>Dan u Tjednu</th>
+                    <th>Temperatura</th>
+                    <th>Real feel</th>
+                    <th>MaksimalnaDnevna</th>
+                    <th>MinimalnaDnevna</th>
+                    <th>BrzinaVjetra</th>
+                    <th>Vlaznost</th>
+                    <th>Tlak</th>
+                    <th>Prikaz</th> 
+                </tr>
+                {% for prognoza in data %}
+                    <tr>
+                        <td>{{prognoza.Datum}}</td>
+                        <td>{{prognoza.DanUTjednu}}</td>
+                        <td>{{prognoza.Temperatura}}</td>
+                        <td>{{prognoza.OsjecajTemperatura}}</td>
+                        <td>{{prognoza.MaksimalnaDnevna}}</td>
+                        <td>{{prognoza.MinimalnaDnevna}}</td>
+                        <td>{{prognoza.BrzinaVjetra}}</td>
+                        <td>{{prognoza.Vlaznost}}</td>
+                        <td>{{prognoza.Tlak}}</td>
+                        <td><img src="{{prognoza.Ikona}}" alt="nema ikone"></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <!-- It's a single object -->
+            <table id="tablicaPrognoze">
+                <tr>
+                    <th>Datum</th>
+                    <th>Temperatura</th>
+                    <th>Real feel</th>
+                    <th>MaksimalnaDnevna</th>
+                    <th>MinimalnaDnevna</th>
+                    <th>BrzinaVjetra</th>
+                    <th>Vlaznost</th>
+                    <th>Tlak</th>
+                </tr>
+                <tr>
+                    <td>{{data.Datum}}</td>
+                    <td>{{data.Temperatura}}</td>
+                    <td>{{data.OsjecajTemperatura}}</td>
+                    <td>{{data.MaksimalnaDnevna}}</td>
+                    <td>{{data.MinimalnaDnevna}}</td>
+                    <td>{{data.BrzinaVjetra}}</td>
+                    <td>{{data.Vlaznost}}</td>
+                    <td>{{data.Tlak}}</td>
+                </tr>
+            </table>
+        {% endif %}
+    </body>
+</html>

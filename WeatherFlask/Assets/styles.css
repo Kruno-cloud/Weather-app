@@ -1,0 +1,14 @@
+
+body {
+    background-image: url('sun.jpg');
+}
+
+
+
+#kontakt {
+    background-image: url('plane-over-clouds-sun.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
